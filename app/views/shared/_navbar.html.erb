@@ -1,38 +1,54 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-  <div class="container-fluid">
-    <%= link_to "#", class: "navbar-brand" do %>
-      <%= image_tag "https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png" %>
-    <% end %>
-
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto">
-        <% if user_signed_in? %>
-          <li class="nav-item active">
-            <%= link_to "Home", "#", class: "nav-link" %>
-          </li>
-          <li class="nav-item">
-            <%= link_to "Messages", "#", class: "nav-link" %>
-          </li>
-          <li class="nav-item dropdown">
-          <a href="#" class="avatar" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar", alt: "dropdown menu" %>
-          </a>
-            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-              <%= link_to "Action", "#", class: "dropdown-item" %>
-              <%= link_to "Another action", "#", class: "dropdown-item" %>
-              <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
-            </div>
-          </li>
-        <% else %>
-          <li class="nav-item">
-            <%= link_to "Login", new_user_session_path, class: "nav-link" %>
-          </li>
-        <% end %>
-      </ul>
-    </div>
+<nav class="navbar py-4 px-2 mx-auto max-w-screen-xl sm:py-4 lg:px-6">
+  <div>
+    <a href="<%= root_path %>" class="logo text-2xl font-bold">Anna Lena Hahn</a>
   </div>
-</div>
+  
+  
+  <!-- Right-side menu -->
+  <div class="flex items-center space-x-2">
+    <div class="hidden md:block">
+      <a href="<%= designs_path %>" class="hover:text-gray-800 px-3">Designs</a>
+      <a href="<%= researches_path %>" class="hover:text-gray-800 px-3">Researches</a>
+      <a href="<%= publications_path %>" class="hover:text-gray-800 px-3">Publications</a>
+      <a href="<%= about_path %>" class="hover:text-gray-800 px-3">About Me</a>
+    </div>
+    <!-- Menu item with dropdown -->
+    <div class="relative" data-controller="dropdown">
+      <button data-action="click->dropdown#toggle" class="px-3 font-bold">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+      <div data-dropdown-target="menu" class="drop-menu absolute right-0 mt-2 w-48 border rounded-md shadow-lg hidden z-50">
+        <a href="<%= designs_path %>" class="block px-4 py-2 hover:bg-gray-100">Designs</a>
+        <a href="<%= researches_path %>" class="block px-4 py-2 hover:bg-gray-100">Researches</a>
+        <a href="<%= publications_path %>" class="block px-4 py-2 hover:bg-gray-100">Publications</a>
+        <a href="<%= about_path %>" class="block px-4 py-2 hover:bg-gray-100">About me</a>
+        
+        <% if user_signed_in? %>
+          <a href="<%= new_design_path %>" class="block px-4 py-2 hover:bg-gray-100">New design</a>
+          <a href="<%= new_research_path %>" class="block px-4 py-2 hover:bg-gray-100">New research</a>
+          <a href="<%= new_publication_path %>" class="block px-4 py-2 hover:bg-gray-100">New publication</a>
+          <% if @design && @design.persisted? %>
+            <a href="<%= edit_design_path(@design) %>" class="block px-4 py-2 hover:bg-gray-100">Edit Design</a>
+            <a href="<%= designs_path %>" class="block px-4 py-2 hover:bg-gray-100">Back to Designs</a>
+            <%= link_to 'Delete design', design_path(@design), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "block px-4 py-2" %>
+          <% end %>
+          <% if @research && @research.persisted? %>
+            <a href="<%= edit_research_path(@research) %>" class="block px-4 py-2 hover:bg-gray-100">Edit Research</a>
+            <a href="<%= researches_path %>" class="block px-4 py-2 hover:bg-gray-100">Back to Researches</a>
+            <%= link_to 'Delete research', research_path(@research), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "block px-4 py-2" %>
+          <% end %>
+          <% if @publication && @publication.persisted? %>
+            <a href="<%= edit_publication_path(@publication) %>" class="block px-4 py-2 hover:bg-gray-100">Edit Publication</a>
+            <a href="<%= publications_path %>" class="block px-4 py-2 hover:bg-gray-100">Back to publications</a>
+            <%= link_to 'Delete publication', publication_path(@publication), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "block px-4 py-2" %>
+          <% end %>
+          <%= link_to 'Log out', destroy_user_session_path, data: { turbo_method: :delete }, class: 'block px-4 py-2 hover:bg-gray-100' %>
+        <% else %>
+          <%= link_to 'Log in', new_user_session_path, class: 'block px-4 py-2 hover:bg-gray-100' %>
+        <% end %>
+      </div>
+    </div>
+
+  </div>
+</nav>
+

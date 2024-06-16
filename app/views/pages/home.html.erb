@@ -1,2 +1,132 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<section class="home-page">
+  <div class="banner-size position-relative">
+    <div id="carouselExampleFade" class="carousel slide carousel-fade h-100">
+      <div class="carousel-inner h-100">
+        <div class="carousel-item active h-100">
+          <%= image_tag "landing1.jpg", class: "d-block h-100 w-100 object-cover object-top", style: "opacity: 0.7;", alt: "First slide" %>
+          <div class="carousel-caption" style="display: flex; justify-content: center;">
+            <div>
+              <div>
+                <a href="<%= designs_path %>">
+                  <button class="banner-button px-2 py-1">Discover</button>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="carousel-item h-100">
+          <%= image_tag "landing2.jpg", class: "d-block h-100 w-100 object-cover object-center", alt: "Second slide" %>
+          <div class="carousel-caption" style="display: flex; justify-content: center;">
+            <div>
+              <div>
+                <a href="<%= designs_path %>">
+                  <button class="banner-button px-2 py-1">Discover</button>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="carousel-item h-100">
+          <%= image_tag "landing3.jpg", class: "d-block h-100 w-100 object-cover object-center", alt: "Third slide" %>
+          <div class="carousel-caption" style="display: flex; justify-content: center;">
+            <div>
+              <div>
+                <a href="<%= designs_path %>">
+                  <button class="banner-button px-2 py-1">Discover</button>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item h-100">
+          <%= image_tag "landing4.jpg", class: "d-block h-100 w-100 object-cover object-bottom", alt: "Fourth slide" %>
+          <div class="carousel-caption" style="display: flex; justify-content: center;">
+            <div>
+              <div>
+                <a href="<%= designs_path %>">
+                  <button class="banner-button px-2 py-1">Discover</button>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="carousel-item h-100">
+          <%= image_tag "landing5.jpg", class: "d-block h-100 w-100 object-cover object-bottom", alt: "Fourth slide" %>
+          <div class="carousel-caption" style="display: flex; justify-content: center;">
+            <div>
+              <div>
+                <a href="<%= designs_path %>">
+                  <button class="banner-button px-2 py-1">Discover</button>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item h-100">
+          <%= image_tag "landing6.jpg", class: "d-block h-100 w-100 object-cover object-top", alt: "Fourth slide" %>
+          <div class="carousel-caption" style="display: flex; justify-content: center;">
+            <div>
+              <div>
+                <a href="<%= designs_path %>">
+                  <button class="banner-button px-2 py-1">Discover</button>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+         
+        <div class="carousel-item h-100">
+          <%= image_tag "landing8.jpg", class: "d-block h-100 w-100 object-cover object-top", alt: "Fourth slide" %>
+          <div class="carousel-caption" style="display: flex; justify-content: center;">
+            <div>
+              <div>
+                <a href="<%= designs_path %>">
+                  <button class="banner-button px-2 py-1">Discover</button>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item h-100">
+          <%= image_tag "landing9.jpg", class: "d-block h-100 w-100 object-cover object-top", alt: "Fourth slide" %>
+          <div class="carousel-caption" style="display: flex; justify-content: center;">
+            <div>
+              <div>
+                <a href="<%= designs_path %>">
+                  <button class="banner-button px-2 py-1">Discover</button>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a class="carousel-control-prev" href="#carouselExampleFade" role="button" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#carouselExampleFade" role="button" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+    
+  </div>
+</section>
+
+
+<script>
+  $(document).on('turbolinks:load', function() {
+  $('.carousel').carousel();
+});
+</script>
+
+
+
+
+

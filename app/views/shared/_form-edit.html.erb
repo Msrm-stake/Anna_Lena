@@ -1,0 +1,44 @@
+<section>
+
+  <div class="container mx-auto px-4">
+    <%= form_with(model: @design, local: true) do |form| %>
+      <div class="mb-4">
+        <%= form.label :name, class: "block text-sm font-bold mb-2", style: "color: #024525;" %>
+        <%= form.text_field :name, class: "w-full p-2 border border-gray-300 rounded-lg mt-1" %>
+      </div>
+
+      <div class="mb-4">
+        <%= form.label :description, class: "block text-sm font-bold mb-2", style: "color: #024525;" %>
+        <%= form.text_area :description, rows: 5, class: "appearance-none border rounded-lg w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline cursor-pointer" %>
+      </div>
+
+      <div class="mb-4">
+        <%= form.label :profile_picture, class: "block text-sm font-bold mb-2", style: "color: #024525;" %>
+        <%= form.file_field :profile_picture, class: "appearance-none border rounded-lg w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline cursor-pointer" %>
+      </div>
+
+      <div class="mb-4">
+        <%= form.label :photos, "Upload New Photos", class: "block text-sm font-bold mb-2", style: "color: #024525;" %>
+        <%= form.file_field :photos, multiple: true, class: "appearance-none border rounded-lg w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline cursor-pointer" %>
+      </div>
+
+      <div class="mb-4">
+        <h3 class="text-lg font-bold mb-2">Existing Photos</h3>
+        <div class="grid grid-cols-3 gap-2">
+          <% @design.photos.each do |photo| %>
+            <div class="relative">
+              <%= image_tag url_for(photo), class: "w-full h-32 object-cover rounded-lg" %>
+              <%= link_to 'Remove Photo', remove_photo_design_path(@design, photo_id: photo.id), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+
+      <div class="mb-4 py-3">
+        <%= form.submit "Update Design", class: "hover:bg-teal-600 font-bold py-2 px-4 rounded-lg focus:outline-none focus:shadow-outline cursor-pointer", style: "background-color: #FFF4F0; color: #024525;" %>
+      </div>
+    <% end %>
+  </div>
+
+</section>
+

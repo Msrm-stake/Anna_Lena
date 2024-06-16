@@ -1,0 +1,42 @@
+<!-- app/views/designs/new.html.erb -->
+<section>
+  <div class="container mx-auto px-4">
+    
+    <%= form_with model: @design, local: true, html: { class: "bg-white rounded px-8 mb-4", multipart: true } do |form| %>
+      <% if @design.errors.any? %>
+        <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative mb-4">
+          <strong class="font-bold">Error(s):</strong>
+          <ul>
+            <% @design.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+
+      <div class="mb-4">
+        <%= form.label :name, class: "block text-sm font-bold mb-2", style: "color: #024525;" %>
+        <%= form.text_field :name, class: "appearance-none border rounded-lg w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline cursor-pointer", required: true %>
+      </div>
+
+      <div class="mb-4">
+        <%= form.label :description, class: "block text-sm font-bold mb-2", style: "color: #024525;" %>
+        <%= form.text_area :description, class: "appearance-none border rounded-lg w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline cursor-pointer", style: "color: #024525;", required: true %>
+      </div>
+
+      <div class="mb-4">
+        <%= form.label :profile_picture, "Photo de profil", class: "block text-sm font-bold mb-2", style: "color: #024525;" %>
+        <%= form.file_field :profile_picture, class: "appearance-none border rounded-lg w-full py-2 px-3 bg-white leading-tight focus:outline-none focus:shadow-outline cursor-pointer", required: true %>
+      </div>
+
+      <div class="mb-4">
+        <%= form.label :photos, "Design galerie", class: "block text-sm font-bold mb-2", style: "color: #024525;" %>
+        <%= form.file_field :photos, multiple: true, class: "appearance-none border rounded-lg w-full py-2 px-3 bg-white leading-tight focus:outline-none focus:shadow-outline cursor-pointer", required: true %>
+      </div>
+
+      <div class="mb-4 py-3">
+        <%= form.submit "Create design", class: "hover:bg-teal-600 font-bold py-2 px-4 rounded-lg focus:outline-none focus:shadow-outline cursor-pointer", style: "background-color: #FFF4F0; color: #024525;" %>
+      </div>
+    <% end %>
+  </div>
+</section>
