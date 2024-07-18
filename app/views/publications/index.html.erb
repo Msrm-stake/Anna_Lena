@@ -1,5 +1,5 @@
 <!-- app/views/publications/index.html.erb -->
-<section class="index-page py-10">
+<section class="index-page py-10 px-4">
 
   <div class="py-4 px-2 mx-auto max-w-screen-xl sm:py-4 lg:px-6">
     
@@ -10,7 +10,7 @@
             <a href="<%= publication_path(publication) %>" class="group relative flex flex-col overflow-hidden px-4 pb-4 pt-40 flex-grow">
               <%= image_tag publication.profile_picture.attached? ? publication.profile_picture : 'placeholder-image-url.jpg', class: 'absolute inset-0 h-full w-full object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out' %>
               <div class="absolute inset-0 bg-gradient-to-b from-gray-900/25 to-gray-900/5"></div>
-              <h3 class="z-10 text-xs font-medium text-white absolute top-0 left-0 p-4 sm:text-sm md:text-base lg:text-lg"><%= publication.name %></h3>
+              <h3 class="z-10 text-xs font-medium text-white absolute bottom-0 left-0 p-4 sm:text-sm md:text-base lg:text-lg"><%= publication.name %></h3>
             </a>
           </div>
         <% elsif index == 1 %>
@@ -18,7 +18,7 @@
             <a href="<%= publication_path(publication) %>" class="group relative flex flex-col overflow-hidden px-4 pb-4 pt-40 flex-grow">
               <%= image_tag publication.profile_picture.attached? ? publication.profile_picture : 'placeholder-image-url.jpg', class: 'absolute inset-0 h-full w-full object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out' %>
               <div class="absolute inset-0 bg-gradient-to-b from-gray-900/25 to-gray-900/5"></div>
-              <h3 class="z-10 text-xs font-medium text-white absolute top-0 left-0 p-4 sm:text-sm md:text-base lg:text-lg"><%= publication.name %></h3>
+              <h3 class="z-10 text-xs font-medium text-white absolute bottom-0 left-0 p-4 sm:text-sm md:text-base lg:text-lg"><%= publication.name %></h3>
             </a>
           </div>
         <% elsif index == 2 %>
@@ -26,7 +26,7 @@
             <a href="<%= publication_path(publication) %>" class="group relative flex flex-col overflow-hidden px-4 pb-4 pt-40 flex-grow">
               <%= image_tag publication.profile_picture.attached? ? publication.profile_picture : 'placeholder-image-url.jpg', class: 'absolute inset-0 h-full w-full object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out' %>
               <div class="absolute inset-0 bg-gradient-to-b from-gray-900/25 to-gray-900/5"></div>
-              <h3 class="z-10 text-xs font-medium text-white absolute top-0 left-0 p-4 sm:text-sm md:text-base lg:text-lg"><%= publication.name %></h3>
+              <h3 class="z-10 text-xs font-medium text-white absolute bottom-0 left-0 p-4 sm:text-sm md:text-base lg:text-lg"><%= publication.name %></h3>
             </a>
           </div>
         <% elsif index == 3 %>
@@ -34,7 +34,7 @@
             <a href="<%= publication_path(publication) %>" class="group relative flex flex-col overflow-hidden px-4 pb-4 pt-40 flex-grow">
               <%= image_tag publication.profile_picture.attached? ? publication.profile_picture : 'placeholder-image-url.jpg', class: 'absolute inset-0 h-full w-full object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out' %>
               <div class="absolute inset-0 bg-gradient-to-b from-gray-900/25 to-gray-900/5"></div>
-              <h3 class="z-10 text-xs font-medium text-white absolute top-0 left-0 p-4 sm:text-sm md:text-base lg:text-lg"><%= publication.name %></h3>
+              <h3 class="z-10 text-xs font-medium text-white absolute bottom-0 left-0 p-4 sm:text-sm md:text-base lg:text-lg"><%= publication.name %></h3>
             </a>
           </div>
         <% elsif index == 4 %>
@@ -42,7 +42,7 @@
             <a href="<%= publication_path(publication) %>" class="group relative flex flex-col overflow-hidden px-4 pb-4 pt-40 flex-grow">
               <%= image_tag publication.profile_picture.attached? ? publication.profile_picture : 'placeholder-image-url.jpg', class: 'absolute inset-0 h-full w-full object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out' %>
               <div class="absolute inset-0 bg-gradient-to-b from-gray-900/25 to-gray-900/5"></div>
-              <h3 class="z-10 text-xs font-medium text-white absolute top-0 left-0 p-4 sm:text-sm md:text-base lg:text-lg"><%= publication.name %></h3>
+              <h3 class="z-10 text-xs font-medium text-white absolute bottom-0 left-0 p-4 sm:text-sm md:text-base lg:text-lg"><%= publication.name %></h3>
             </a>
           </div>
         <% elsif index == 5 %>
@@ -50,7 +50,7 @@
             <a href="<%= publication_path(publication) %>" class="group relative flex flex-col overflow-hidden px-4 pb-4 pt-40 flex-grow">
               <%= image_tag publication.profile_picture.attached? ? publication.profile_picture : 'placeholder-image-url.jpg', class: 'absolute inset-0 h-full w-full object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out' %>
               <div class="absolute inset-0 bg-gradient-to-b from-gray-900/25 to-gray-900/5"></div>
-              <h3 class="z-10 text-xs font-medium text-white absolute top-0 left-0 p-4 sm:text-sm md:text-base lg:text-lg"><%= publication.name %></h3>
+              <h3 class="z-10 text-xs font-medium text-white absolute bottom-0 left-0 p-4 sm:text-sm md:text-base lg:text-lg"><%= publication.name %></h3>
             </a>
           </div>
         <% elsif index == 6 %>
@@ -58,7 +58,7 @@
             <a href="<%= publication_path(publication) %>" class="group relative flex flex-col overflow-hidden px-4 pb-4 pt-40 flex-grow">
               <%= image_tag publication.profile_picture.attached? ? publication.profile_picture : 'placeholder-image-url.jpg', class: 'absolute inset-0 h-full w-full object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out' %>
               <div class="absolute inset-0 bg-gradient-to-b from-gray-900/25 to-gray-900/5"></div>
-              <h3 class="z-10 text-xs font-medium text-white absolute top-0 left-0 p-4 sm:text-sm md:text-base lg:text-lg"><%= publication.name %></h3>
+              <h3 class="z-10 text-xs font-medium text-white absolute bottom-0 left-0 p-4 sm:text-sm md:text-base lg:text-lg"><%= publication.name %></h3>
             </a>
           </div>
         <% elsif index == 7 %>
@@ -66,7 +66,7 @@
             <a href="<%= publication_path(publication) %>" class="group relative flex flex-col overflow-hidden px-4 pb-4 pt-40 flex-grow">
               <%= image_tag publication.profile_picture.attached? ? publication.profile_picture : 'placeholder-image-url.jpg', class: 'absolute inset-0 h-full w-full object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out' %>
               <div class="absolute inset-0 bg-gradient-to-b from-gray-900/25 to-gray-900/5"></div>
-              <h3 class="z-10 text-xs font-medium text-white absolute top-0 left-0 p-4 sm:text-sm md:text-base lg:text-lg"><%= publication.name %></h3>
+              <h3 class="z-10 text-xs font-medium text-white absolute bottom-0 left-0 p-4 sm:text-sm md:text-base lg:text-lg"><%= publication.name %></h3>
             </a>
           </div>
         <% elsif index == 8 %>
@@ -74,7 +74,7 @@
             <a href="<%= publication_path(publication) %>" class="group relative flex flex-col overflow-hidden px-4 pb-4 pt-40 flex-grow">
               <%= image_tag publication.profile_picture.attached? ? publication.profile_picture : 'placeholder-image-url.jpg', class: 'absolute inset-0 h-full w-full object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out' %>
               <div class="absolute inset-0 bg-gradient-to-b from-gray-900/25 to-gray-900/5"></div>
-              <h3 class="z-10 text-xs font-medium text-white absolute top-0 left-0 p-4 sm:text-sm md:text-base lg:text-lg"><%= publication.name %></h3>
+              <h3 class="z-10 text-xs font-medium text-white absolute bottom-0 left-0 p-4 sm:text-sm md:text-base lg:text-lg"><%= publication.name %></h3>
             </a>
           </div>
         <% elsif index == 9 %>
@@ -82,7 +82,7 @@
             <a href="<%= publication_path(publication) %>" class="group relative flex flex-col overflow-hidden px-4 pb-4 pt-40 flex-grow">
               <%= image_tag publication.profile_picture.attached? ? publication.profile_picture : 'placeholder-image-url.jpg', class: 'absolute inset-0 h-full w-full object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out' %>
               <div class="absolute inset-0 bg-gradient-to-b from-gray-900/25 to-gray-900/5"></div>
-              <h3 class="z-10 text-xs font-medium text-white absolute top-0 left-0 p-4 sm:text-sm md:text-base lg:text-lg"><%= publication.name %></h3>
+              <h3 class="z-10 text-xs font-medium text-white absolute bottom-0 left-0 p-4 sm:text-sm md:text-base lg:text-lg"><%= publication.name %></h3>
             </a>
           </div>
         <% elsif index == 10 %>
@@ -90,7 +90,7 @@
             <a href="<%= publication_path(publication) %>" class="group relative flex flex-col overflow-hidden px-4 pb-4 pt-40 flex-grow">
               <%= image_tag publication.profile_picture.attached? ? publication.profile_picture : 'placeholder-image-url.jpg', class: 'absolute inset-0 h-full w-full object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out' %>
               <div class="absolute inset-0 bg-gradient-to-b from-gray-900/25 to-gray-900/5"></div>
-              <h3 class="z-10 text-xs font-medium text-white absolute top-0 left-0 p-4 sm:text-sm md:text-base lg:text-lg"><%= publication.name %></h3>
+              <h3 class="z-10 text-xs font-medium text-white absolute bottom-0 left-0 p-4 sm:text-sm md:text-base lg:text-lg"><%= publication.name %></h3>
             </a>
           </div>
         <% end %>

@@ -1,12 +1,12 @@
 
 <section class="px-10 py-10" style="background-color: #FFF4F0;">
   <div class="container mx-auto px-4 bg-white rounded-lg shadow-white-md py-3">
-    <h2>Sign up</h2>
+    <h2 style="color: #024525">Sign up</h2>
 
     <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
       <%= f.error_notification %>
 
-      <div class="form-inputs">
+      <div class="form-inputs" style="color: #024525">
         <%= f.input :email,
                     required: true,
                     autofocus: true,
@@ -21,7 +21,7 @@
       </div>
 
       <div class="form-actions">
-        <%= f.button :submit, "Sign up" %>
+        <%= f.button :submit, "Sign up", style: "background-color: #024525; color: white; margin-bottom: 10px;" %>
       </div>
     <% end %>
 

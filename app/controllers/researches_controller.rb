@@ -66,6 +66,6 @@ class ResearchesController < ApplicationController
   end
 
   def research_params
-    params.require(:research).permit(:name, :description, :profile_picture, photos: [])
+    params.require(:research).permit(:name, :description, :descriptionfr, :profile_picture, photos: [])
   end
 end

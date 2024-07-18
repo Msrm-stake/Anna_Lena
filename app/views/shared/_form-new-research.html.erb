@@ -25,6 +25,11 @@
       </div>
 
       <div class="mb-4">
+        <%= form.label :descriptionfr, class: "block text-sm font-bold mb-2", style: "color: #024525;" %>
+        <%= form.text_area :descriptionfr, class: "appearance-none border rounded-lg w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline cursor-pointer", style: "color: #024525;", required: true %>
+      </div>
+
+      <div class="mb-4">
         <%= form.label :profile_picture, "Photo de profil", class: "block text-sm font-bold mb-2", style: "color: #024525;" %>
         <%= form.file_field :profile_picture, class: "appearance-none border rounded-lg w-full py-2 px-3 bg-white leading-tight focus:outline-none focus:shadow-outline cursor-pointer", required: true %>
       </div>

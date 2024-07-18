@@ -66,6 +66,6 @@ class PublicationsController < ApplicationController
   end
 
   def publication_params
-    params.require(:publication).permit(:name, :description, :profile_picture, photos: [])
+    params.require(:publication).permit(:name, :description, :descriptionfr, :profile_picture, photos: [])
   end
 end

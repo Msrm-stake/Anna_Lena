@@ -1,4 +1,4 @@
-<nav class="navbar py-4 px-2 mx-auto max-w-screen-xl sm:py-4 lg:px-6">
+<nav class="navbar py-4 px-4 mx-auto max-w-screen-xl sm:py-4 lg:px-6">
   <div>
     <a href="<%= root_path %>" class="logo text-2xl font-bold">Anna Lena Hahn</a>
   </div>
@@ -7,10 +7,12 @@
   <!-- Right-side menu -->
   <div class="flex items-center space-x-2">
     <div class="hidden md:block">
-      <a href="<%= designs_path %>" class="hover:text-gray-800 px-3">Designs</a>
-      <a href="<%= researches_path %>" class="hover:text-gray-800 px-3">Researches</a>
-      <a href="<%= publications_path %>" class="hover:text-gray-800 px-3">Publications</a>
-      <a href="<%= about_path %>" class="hover:text-gray-800 px-3">About Me</a>
+      <nav class="flex space-x-4">
+        <%= link_to 'Design', designs_path, class: "px-3 pb-1 #{'text-gray-800 border-b-2 border-indigo-600' if current_page?(designs_path)}" %>
+        <%= link_to 'Research', researches_path, class: "px-3 pb-1 #{'text-gray-800 border-b-2 border-indigo-600' if current_page?(researches_path)}" %>
+        <%= link_to 'Publications', publications_path, class: "px-3 pb-1 #{'text-gray-800 border-b-2 border-indigo-600' if current_page?(publications_path)}" %>
+        <%= link_to 'About Me', about_path, class: "px-3 pb-1 #{'text-gray-800 border-b-2 border-indigo-600' if current_page?(about_path)}" %>
+      </nav>
     </div>
     <!-- Menu item with dropdown -->
     <div class="relative" data-controller="dropdown">
@@ -18,11 +20,14 @@
         <i class="fa-solid fa-bars"></i>
       </button>
       <div data-dropdown-target="menu" class="drop-menu absolute right-0 mt-2 w-48 border rounded-md shadow-lg hidden z-50">
-        <a href="<%= designs_path %>" class="block px-4 py-2 hover:bg-gray-100">Designs</a>
-        <a href="<%= researches_path %>" class="block px-4 py-2 hover:bg-gray-100">Researches</a>
+        <a href="<%= designs_path %>" class="block px-4 py-2 hover:bg-gray-100">Design</a>
+        <a href="<%= researches_path %>" class="block px-4 py-2 hover:bg-gray-100">Research</a>
         <a href="<%= publications_path %>" class="block px-4 py-2 hover:bg-gray-100">Publications</a>
         <a href="<%= about_path %>" class="block px-4 py-2 hover:bg-gray-100">About me</a>
+        <a href="<%= contributors_path %>" class="block px-4 py-2 hover:bg-gray-100">Collaborators</a>
         
+        
+
         <% if user_signed_in? %>
           <a href="<%= new_design_path %>" class="block px-4 py-2 hover:bg-gray-100">New design</a>
           <a href="<%= new_research_path %>" class="block px-4 py-2 hover:bg-gray-100">New research</a>
@@ -46,9 +51,13 @@
         <% else %>
           <%= link_to 'Log in', new_user_session_path, class: 'block px-4 py-2 hover:bg-gray-100' %>
         <% end %>
+        <div class="block px-4 py-2">
+          <p style="color: white; font-weight: bold; background-color: #024525; padding: 5px; border-radius: 5px; text-decoration: none; cursor: pointer; width: 120px; text-align: center;"><%= mail_to 'a.l.hahn@icloud.com', 'Contact Me', subject: 'Contact from Website', body: 'Hello from the website!', style: "color: white; text-decoration: none;" %></p>
+        </div>
       </div>
     </div>
 
   </div>
+  
 </nav>
 

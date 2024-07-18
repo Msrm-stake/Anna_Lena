@@ -1,4 +1,4 @@
-<h2>Change your password</h2>
+<h2 style="color: #024525">Change your password</h2>
 
 <%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
   <%= f.error_notification %>
@@ -6,7 +6,7 @@
   <%= f.input :reset_password_token, as: :hidden %>
   <%= f.full_error :reset_password_token %>
 
-  <div class="form-inputs">
+  <div class="form-inputs" style="color: #024525">
     <%= f.input :password,
                 label: "New password",
                 required: true,
@@ -20,7 +20,7 @@
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit, "Change my password" %>
+    <%= f.button :submit, "Change my password", style: "background-color: #024525; color: white; margin-bottom: 10px;" %>
   </div>
 <% end %>
 
