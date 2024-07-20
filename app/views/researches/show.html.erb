@@ -3,11 +3,11 @@
     <div style="margin-top: 60px;">
       <div class="flex flex-col md:flex-row gap-10 items-center">
 
-        <div>
+        <div style="height: 150px; width: 150px;">
           <% if @research.profile_picture.attached? %>
-            <%= image_tag @research.profile_picture, class: 'h-40 w-40 rounded-full' %>
+            <%= image_tag @research.profile_picture, class: 'rounded-full object-cover', style: "height: 100%; width: 100%;" %>
           <% else %>
-            <img src="placeholder-image-url.jpg" alt="Placeholder" class="h-24 w-24 rounded-full object-cover sm:h-32 sm:w-32">
+            <img src="placeholder-image-url.jpg" alt="Placeholder" class="h-full w-full rounded-full object-cover">
           <% end %>
         </div>
 
@@ -34,7 +34,7 @@
       </div>
 
       <div class="px-4 md:px-8 pb-3">
-        <h3 style="color: #024525;">Gallary</h3>
+        <h3 style="color: #024525;">Gallery</h3>
       </div>
 
       <div class="pb-10">
@@ -46,7 +46,6 @@
                   <a href="<%= cl_image_path(photo.key) %>" data-fancybox="gallery"
                     class="group relative flex h-48 items-end overflow-hidden rounded-lg bg-gray-100 shadow-lg md:h-80 col-span-1">
                     <%= cl_image_tag photo.key, crop: :fill, class: "absolute inset-0 h-full w-full object-cover object-center transition duration-200 group-hover:scale-110" %>
-                    <div class="pointer-events-none absolute inset-0 bg-gradient-to-t from-gray-800 via-transparent to-transparent opacity-50"></div>
                   </a>
                 <% else %>
                   <a href="<%= cl_image_path(photo.key) %>" data-fancybox="gallery"

@@ -9,9 +9,10 @@
           <div class="col-span-2 sm:col-span-2 md:col-span-2 bg-gray-50 flex flex-col" style="height: 300px;">
             <a href="<%= design_path(design) %>" class="group relative flex flex-col overflow-hidden px-4 pb-4 pt-40 flex-grow">
               <%= image_tag design.profile_picture.attached? ? design.profile_picture : 'placeholder-image-url.jpg', class: 'absolute inset-0 h-full w-full object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out' %>
-              <div class="absolute inset-0 bg-gradient-to-b from-gray-900/25 to-gray-900/5"></div>
               <h3 class="z-10 text-xs font-medium text-white absolute bottom-0 left-0 p-4 sm:text-sm md:text-base lg:text-lg"><%= design.name %></h3>
             </a>
+
+
           </div>
         <% elsif index == 1 %>
           <div class="col-span-2 sm:col-span-2 md:col-span-2 bg-gray-50 flex flex-col" style="height: 300px;">

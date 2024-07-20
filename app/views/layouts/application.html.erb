@@ -19,10 +19,29 @@
     <%= render "shared/flashes" %>
 
     <%= yield %>
-    <div class="footer px-4 py-1 mx-auto lg:px-24">
+    <div class="px-4 py-1 mx-auto lg:px-24 justify-around" style="background-color: #FFF4F0;
+    height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; align-items: center;" >
+
       <div class="lg:px-24">
-        <p></p>
+        <p style="color: gray; font-size: 13px; margin: 0;">@2024 AnnaLena Hahn</p>
       </div>
+
+      <div class="lg:px-24" style="display: flex; gap: 30px;">
+        <a href="mailto:a.l.hahn@icloud.com" style="font-size: 20px; color: #024525;">
+          <i class="fa-regular fa-envelope"></i>
+        </a>
+        <a href="https://www.instagram.com/atelier.zaatar" style="font-size: 20px; color: #024525;" target="_blank">
+          <i class="fa-brands fa-instagram"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/anna-lena-hahn-074225143/" style="font-size: 20px; color: #024525;" target="_blank">
+          <i class="fa-brands fa-linkedin"></i>
+        </a>
+      </div>
+     
+
     </div>
   </body>
 </html>
