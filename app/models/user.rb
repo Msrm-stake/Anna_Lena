@@ -9,6 +9,8 @@ class User < ApplicationRecord
   
   validate :allowed_email, on: :create
 
+  include PasswordComplexityValidator
+
   private
 
   def allowed_email

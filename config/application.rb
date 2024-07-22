@@ -29,5 +29,6 @@ module AnnaLena
     #
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
+    config.x.your_app_domain = 'analena-hahn.com'
   end
 end

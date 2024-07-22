@@ -3,16 +3,19 @@ require "active_support/core_ext/integer/time"
 Rails.application.configure do
   config.action_mailer.default_url_options = { host: "http://localhost:3000" }
   # Settings specified here will take precedence over those in config/application.rb.
+
+
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-    address: 'smtp.mailgun.org',
-    port: 587,
-    domain: 'sandboxb3c3c469c7e041d0bcc1f78c3016b573.mailgun.org',
-    user_name: 'postmaster@sandboxb3c3c469c7e041d0bcc1f78c3016b573.mailgun.org',
-    password: 'e079198a1db9750bb7d7094bea6a3419-a2dd40a3-c6766160',
-    authentication: 'plain',
-    enable_starttls_auto: true
+    :user_name => 'api',
+    :password => 'fbfddc63e029d02a2af4b06ef4b44bb4',
+    :address => 'live.smtp.mailtrap.io',
+    :domain => 'annalena-hahn.com',
+    :host => 'live.smtp.mailtrap.io',
+    :port => '587',
+    :authentication => :login
   }
+
 
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
 
@@ -50,7 +53,7 @@ Rails.application.configure do
   config.active_storage.service = :cloudinary
 
   # Don't care if the mailer can't send.
-  config.action_mailer.raise_delivery_errors = false
+  config.action_mailer.raise_delivery_errors = true
 
   config.action_mailer.perform_caching = false
 
